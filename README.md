@@ -6,6 +6,8 @@ Full data lives in a public GitHub release ([data-v1](https://github.com/jayjex/
 
 ## Datasets
 
+Browse the full catalog at [jayjex.github.io/data-vault](https://jayjex.github.io/data-vault/): 51,895 HUD rent rows, 7,548 NFL games, 90,169 Airbnb listings. Samples are free, and this server queries the full files at no cost.
+
 | slug | what it is | rows | license |
 |---|---|---|---|
 | `nfl-games` | NFL games with scores, closing spreads, totals, moneylines, 1999-2026 | 7,548 + 2 derived tables | CC BY 4.0 (nflverse) |
