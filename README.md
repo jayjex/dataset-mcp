@@ -95,7 +95,22 @@ command = "npx"
 args = ["-y", "github:jayjex/dataset-mcp"]
 ```
 
-Once the npm package is published, `npx -y @jayjex/dataset-mcp` does the same thing as the git form.
+npm 12 refuses git-based installs by default (`EALLOWGIT`). Pass the flag through npx:
+
+```json
+{
+  "mcpServers": {
+    "dataset-mcp": {
+      "command": "npx",
+      "args": ["--allow-git=all", "-y", "github:jayjex/dataset-mcp"]
+    }
+  }
+}
+```
+
+or set `allow-git=github.com` once in your `~/.npmrc`. npm 10 and 11 need no flag.
+
+Once the npm package is published, `npx -y @jayjex/dataset-mcp` does the same thing as the git form, with no allow-git flag needed.
 
 ## How it works
 
