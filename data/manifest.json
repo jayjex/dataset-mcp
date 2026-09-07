@@ -1,7 +1,7 @@
 {
  "manifest_version": 1,
  "release": "data-v1",
- "generated": "2026-09-07",
+ "generated": "2026-09-10",
  "base_url": "https://github.com/jayjex/dataset-mcp/releases/download/data-v1",
  "datasets": {
   "nfl-games": {
@@ -211,6 +211,88 @@
      "url": "https://github.com/jayjex/dataset-mcp/releases/download/data-v1/hud-data-dictionary.md",
      "sha256": "c66fbdb0c52515fa6c78e970c0d41496cbb069bbe6ab2e05afc55567ee17e353",
      "bytes": 5168,
+     "type": "data",
+     "note": "data dictionary"
+    }
+   ]
+  },
+  "hud-fmr-2027": {
+   "name": "HUD Fair Market Rents FY2027",
+   "attribution": "US Department of Housing and Urban Development (HUD) FY2027 Fair Market Rents. US government work, public domain.",
+   "license": "Public domain (US government data)",
+   "query_tips": "Main table hud-fmr-by-zip-2027.csv: 51,871 ZIP rows, rates effective October 1, 2026. Filter with where [{\"column\":\"state\",\"op\":\"=\",\"value\":\"TX\"}]. Numeric: fmr_0br through fmr_4br (dollars/month). hud-fmr-by-county-2027.csv gives medians and maxima per county; hud-state-summary-2027.csv is a 52-row aggregate.",
+   "default_file": "hud-fmr-by-zip-2027.csv",
+   "files": [
+    {
+     "file": "hud-fmr-by-zip-2027.csv",
+     "url": "https://github.com/jayjex/dataset-mcp/releases/download/data-v1/hud-fmr-by-zip-2027.csv",
+     "sha256": "3f94c5e98da53ff87987d7dbc28bf34de42168b5e90221dec70d62d1f0e30bd1",
+     "bytes": 4559428,
+     "type": "data",
+     "rows": 51871,
+     "columns": [
+      "zip",
+      "hud_area_code",
+      "metro",
+      "area_name",
+      "state",
+      "fmr_0br",
+      "fmr_1br",
+      "fmr_2br",
+      "fmr_3br",
+      "fmr_4br"
+     ]
+    },
+    {
+     "file": "hud-fmr-by-county-2027.csv",
+     "url": "https://github.com/jayjex/dataset-mcp/releases/download/data-v1/hud-fmr-by-county-2027.csv",
+     "sha256": "8a0581b3d135b4b8b50a99536de08233f73a9d7f1edd6dcef0b792d1c313b8bb",
+     "bytes": 273824,
+     "type": "data",
+     "rows": 3229,
+     "columns": [
+      "state",
+      "state_name",
+      "county",
+      "metro",
+      "fmr_0br_median",
+      "fmr_0br_max",
+      "fmr_1br_median",
+      "fmr_1br_max",
+      "fmr_2br_median",
+      "fmr_2br_max",
+      "fmr_3br_median",
+      "fmr_3br_max",
+      "fmr_4br_median",
+      "fmr_4br_max",
+      "area_rows"
+     ]
+    },
+    {
+     "file": "hud-state-summary-2027.csv",
+     "url": "https://github.com/jayjex/dataset-mcp/releases/download/data-v1/hud-state-summary-2027.csv",
+     "sha256": "97a5c5a50ddd96a0cd10feec4f91fe62cb332357dc971978ca24a30fa781a638",
+     "bytes": 4021,
+     "type": "data",
+     "rows": 52,
+     "columns": [
+      "state",
+      "state_name",
+      "zip_count",
+      "fmr_2br_median",
+      "fmr_2br_min_zip",
+      "fmr_2br_max_zip",
+      "highest_county",
+      "highest_county_fmr_2br",
+      "lowest_county",
+      "lowest_county_fmr_2br"
+     ]
+    },
+    {
+     "file": "hud-data-dictionary-2027.md",
+     "url": "https://github.com/jayjex/dataset-mcp/releases/download/data-v1/hud-data-dictionary-2027.md",
+     "sha256": "48a0246262c3f1b1c85f0400b306fb68cb08c81ed2cabf3c7e222748353b23d9",
+     "bytes": 5182,
      "type": "data",
      "note": "data dictionary"
     }

@@ -2,7 +2,7 @@
 
 MCP server over the [jayjex Data Vault](https://jayjex.github.io/data-vault/). Sample data is free, and since v1.1.0 the full released files are queryable too: filter, paginate, and summarize every row without downloading anything yourself.
 
-Full data lives in a public GitHub release ([data-v1](https://github.com/jayjex/dataset-mcp/releases/tag/data-v1), 19 MB across 22 files). The server downloads a file once into `~/.cache/dataset-mcp/`, pins the cache to the manifest SHA-256, and then answers queries from memory.
+Full data lives in a public GitHub release ([data-v1](https://github.com/jayjex/dataset-mcp/releases/tag/data-v1), 24 MB across 26 files). The server downloads a file once into `~/.cache/dataset-mcp/`, pins the cache to the manifest SHA-256, and then answers queries from memory.
 
 ## Datasets
 
@@ -12,6 +12,7 @@ Browse the full catalog at [jayjex.github.io/data-vault](https://jayjex.github.i
 |---|---|---|---|
 | `nfl-games` | NFL games with scores, closing spreads, totals, moneylines, 1999-2026 | 7,548 + 2 derived tables | CC BY 4.0 (nflverse) |
 | `hud-fmr-2026` | HUD Fair Market Rents FY2026, rent by ZIP, county, and state | 51,895 + 2 tables | Public domain (US government data) |
+| `hud-fmr-2027` | HUD Fair Market Rents FY2027, effective October 1, 2026, same three tables | 51,871 + 2 tables | Public domain (US government data) |
 | `airbnb-six-cities` | Airbnb listings in Austin, Nashville, Denver, NYC, Las Vegas, San Diego | 90,169 across 6 files | CC BY 4.0 (Inside Airbnb) |
 | `earn-bounties` | Superteam Earn listings: cards, full descriptions, 186+ API routes | 51 cards / 28 descriptions | Public API aggregate |
 | `scraper-pack` | Playwright scraping scripts (samples only) | n/a | See data-vault page |
@@ -26,7 +27,27 @@ Browse the full catalog at [jayjex.github.io/data-vault](https://jayjex.github.i
 
 ## Query examples
 
-Texas rents from the 51,895-row ZIP table:
+New York, NY rents from the FY2027 ZIP table (51,871 rows, rates effective October 1, 2026):
+
+```
+query_dataset("hud-fmr-2027", {
+  where: [{ column: "state", op: "=", value: "NY" }],
+  limit: 5
+})
+```
+
+Returns `total_matched: 2397` with rows like:
+
+```json
+{
+  "zip": "10001",
+  "area_name": "New York, NY HUD Metro FMR Area",
+  "state": "NY",
+  "fmr_2br": "4460"
+}
+```
+
+Texas rents from the FY2026 ZIP table:
 
 ```
 query_dataset("hud-fmr-2026", {
