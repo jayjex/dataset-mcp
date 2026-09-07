@@ -1,0 +1,459 @@
+{
+ "manifest_version": 1,
+ "release": "data-v1",
+ "generated": "2026-09-07",
+ "base_url": "https://github.com/jayjex/dataset-mcp/releases/download/data-v1",
+ "datasets": {
+  "nfl-games": {
+   "name": "NFL Games & Betting Lines 1999-2026",
+   "attribution": "Data from nflverse (https://github.com/nflverse/nflverse-data), CC BY 4.0. season-summaries.csv and team-records-by-season.csv were derived from the nflverse source and carry the same license. Team logos and league marks are not included.",
+   "license": "CC BY 4.0",
+   "query_tips": "Main table nfl-games.csv: 7,548 games, seasons 1999-2026. Filter with where [{\"column\":\"season\",\"op\":\"=\",\"value\":2025}]. Numeric: spread_line, total_line, temp, wind, scores, moneylines. Empty cells mean the stat was not tracked (mostly temp/wind before 2010).",
+   "default_file": "nfl-games.csv",
+   "files": [
+    {
+     "file": "nfl-games.csv",
+     "url": "https://github.com/jayjex/dataset-mcp/releases/download/data-v1/nfl-games.csv",
+     "sha256": "c9d3896dafb1ca89b0bd9196d7e5948b16d56cb258a145bd71ef771069c3a605",
+     "bytes": 2177170,
+     "type": "data",
+     "rows": 7548,
+     "columns": [
+      "game_id",
+      "season",
+      "game_type",
+      "week",
+      "gameday",
+      "weekday",
+      "gametime",
+      "away_team",
+      "away_score",
+      "home_team",
+      "home_score",
+      "location",
+      "result",
+      "total",
+      "overtime",
+      "old_game_id",
+      "gsis",
+      "nfl_detail_id",
+      "pfr",
+      "pff",
+      "espn",
+      "ftn",
+      "away_rest",
+      "home_rest",
+      "away_moneyline",
+      "home_moneyline",
+      "spread_line",
+      "away_spread_odds",
+      "home_spread_odds",
+      "total_line",
+      "under_odds",
+      "over_odds",
+      "div_game",
+      "roof",
+      "surface",
+      "temp",
+      "wind",
+      "away_qb_id",
+      "home_qb_id",
+      "away_qb_name",
+      "home_qb_name",
+      "away_coach",
+      "home_coach",
+      "referee",
+      "stadium_id",
+      "stadium"
+     ]
+    },
+    {
+     "file": "nfl-season-summaries.csv",
+     "url": "https://github.com/jayjex/dataset-mcp/releases/download/data-v1/nfl-season-summaries.csv",
+     "sha256": "be157e391f944b7d43afb2267d00285c31e70ae3ed666f0a093438dc773710bb",
+     "bytes": 2148,
+     "type": "data",
+     "rows": 27,
+     "columns": [
+      "season",
+      "games_played",
+      "avg_home_points",
+      "avg_away_points",
+      "avg_total_points",
+      "home_win_pct",
+      "ties",
+      "games_with_spread",
+      "favorite_cover_pct",
+      "underdog_cover_pct",
+      "spread_push_count",
+      "games_with_total",
+      "over_pct",
+      "under_pct",
+      "total_push_count"
+     ]
+    },
+    {
+     "file": "nfl-team-records-by-season.csv",
+     "url": "https://github.com/jayjex/dataset-mcp/releases/download/data-v1/nfl-team-records-by-season.csv",
+     "sha256": "a7f8181e8dc631d4e143e7761a8cdb6a06d09df7f0ed1c88368c278672727f83",
+     "bytes": 40138,
+     "type": "data",
+     "rows": 861,
+     "columns": [
+      "season",
+      "team",
+      "games",
+      "wins",
+      "losses",
+      "ties",
+      "points_for",
+      "points_against",
+      "ats_wins",
+      "ats_losses",
+      "ats_pushes",
+      "ats_win_pct",
+      "overs",
+      "unders",
+      "total_pushes"
+     ]
+    },
+    {
+     "file": "nfl-data-dictionary.md",
+     "url": "https://github.com/jayjex/dataset-mcp/releases/download/data-v1/nfl-data-dictionary.md",
+     "sha256": "75e19b067bfbb23187afcdc51022b6fba0ee45ebdeac4c12d21790dbbdb78b8f",
+     "bytes": 8312,
+     "type": "data",
+     "note": "data dictionary"
+    },
+    {
+     "file": "nfl-ATTRIBUTION.txt",
+     "url": "https://github.com/jayjex/dataset-mcp/releases/download/data-v1/nfl-ATTRIBUTION.txt",
+     "sha256": "57bef35c50c8cfb39e58ffbfe224a233746885b0adb7aecbc08eca6df69a0722",
+     "bytes": 683,
+     "type": "data"
+    }
+   ]
+  },
+  "hud-fmr-2026": {
+   "name": "HUD Fair Market Rents FY2026",
+   "attribution": "US Department of Housing and Urban Development (HUD) FY2026 Fair Market Rents. US government work, public domain.",
+   "license": "Public domain (US government data)",
+   "query_tips": "Main table hud-fmr-by-zip-2026.csv: 51,895 ZIP rows. Filter with where [{\"column\":\"state\",\"op\":\"=\",\"value\":\"TX\"}]. Numeric: fmr_0br through fmr_4br (dollars/month). hud-fmr-by-county-2026.csv gives medians and maxima per county; hud-state-summary.csv is a 52-row aggregate.",
+   "default_file": "hud-fmr-by-zip-2026.csv",
+   "files": [
+    {
+     "file": "hud-fmr-by-zip-2026.csv",
+     "url": "https://github.com/jayjex/dataset-mcp/releases/download/data-v1/hud-fmr-by-zip-2026.csv",
+     "sha256": "04ffb4597f37de264a2e3c91d39462b44539f650bd7f30b2938ca73971fbe975",
+     "bytes": 4550560,
+     "type": "data",
+     "rows": 51895,
+     "columns": [
+      "zip",
+      "hud_area_code",
+      "metro",
+      "area_name",
+      "state",
+      "fmr_0br",
+      "fmr_1br",
+      "fmr_2br",
+      "fmr_3br",
+      "fmr_4br"
+     ]
+    },
+    {
+     "file": "hud-fmr-by-county-2026.csv",
+     "url": "https://github.com/jayjex/dataset-mcp/releases/download/data-v1/hud-fmr-by-county-2026.csv",
+     "sha256": "c2805850f279bb1d6d1037cc30f142512c2900a0a2467715f52e01c3cf25c4c3",
+     "bytes": 272165,
+     "type": "data",
+     "rows": 3229,
+     "columns": [
+      "state",
+      "state_name",
+      "county",
+      "metro",
+      "fmr_0br_median",
+      "fmr_0br_max",
+      "fmr_1br_median",
+      "fmr_1br_max",
+      "fmr_2br_median",
+      "fmr_2br_max",
+      "fmr_3br_median",
+      "fmr_3br_max",
+      "fmr_4br_median",
+      "fmr_4br_max",
+      "area_rows"
+     ]
+    },
+    {
+     "file": "hud-state-summary.csv",
+     "url": "https://github.com/jayjex/dataset-mcp/releases/download/data-v1/hud-state-summary.csv",
+     "sha256": "4ecd40033a1599b00d045cf53075c47b9811e1725b74c8d69c425d1e735815b0",
+     "bytes": 3956,
+     "type": "data",
+     "rows": 52,
+     "columns": [
+      "state",
+      "state_name",
+      "zip_count",
+      "fmr_2br_median",
+      "fmr_2br_min_zip",
+      "fmr_2br_max_zip",
+      "highest_county",
+      "highest_county_fmr_2br",
+      "lowest_county",
+      "lowest_county_fmr_2br"
+     ]
+    },
+    {
+     "file": "hud-data-dictionary.md",
+     "url": "https://github.com/jayjex/dataset-mcp/releases/download/data-v1/hud-data-dictionary.md",
+     "sha256": "c66fbdb0c52515fa6c78e970c0d41496cbb069bbe6ab2e05afc55567ee17e353",
+     "bytes": 5168,
+     "type": "data",
+     "note": "data dictionary"
+    }
+   ]
+  },
+  "airbnb-six-cities": {
+   "name": "Airbnb Listings, 6 US Cities",
+   "attribution": "Data by Inside Airbnb, InsideAirbnb.com, CC BY 4.0. Snapshots: Austin 2026-06-22, Nashville 2026-06-26, Denver 2026-06-30, New York City 2026-08-10, Las Vegas (Clark County) 2026-06-27, San Diego 2026-06-27. Host names, IDs and exact addresses are excluded by design; coordinates rounded to 4 decimals.",
+   "license": "CC BY 4.0",
+   "query_tips": "One normalized table per city (airbnb-<city>.csv), 90,169 listings total, identical 12 columns. Filter with where [{\"column\":\"city\",\"op\":\"=\",\"value\":\"Austin, TX\"}] on airbnb-cities-index.csv, or load a city file and filter room_type or price. Numeric: price, minimum_nights, availability_365, number_of_reviews, latitude, longitude. reviews_per_month and last_review are empty for listings with no reviews.",
+   "default_file": "airbnb-cities-index.csv",
+   "files": [
+    {
+     "file": "airbnb-cities-index.csv",
+     "url": "https://github.com/jayjex/dataset-mcp/releases/download/data-v1/airbnb-cities-index.csv",
+     "sha256": "0a3bdd542fc1af0d46cc094618eec1e20df6010cb462df7a7705b31539c62c97",
+     "bytes": 1108,
+     "type": "data",
+     "rows": 6,
+     "columns": [
+      "city",
+      "snapshot_date",
+      "rows",
+      "file",
+      "median_price_usd",
+      "room_type_mix"
+     ]
+    },
+    {
+     "file": "airbnb-austin.csv",
+     "url": "https://github.com/jayjex/dataset-mcp/releases/download/data-v1/airbnb-austin.csv",
+     "sha256": "225c9bb2962ef8578828f10f676f6780552133e6574b931a2c8aa19a42179f7a",
+     "bytes": 1427492,
+     "type": "data",
+     "rows": 11295,
+     "columns": [
+      "id",
+      "name",
+      "neighbourhood",
+      "latitude",
+      "longitude",
+      "room_type",
+      "price",
+      "minimum_nights",
+      "availability_365",
+      "number_of_reviews",
+      "reviews_per_month",
+      "last_review"
+     ]
+    },
+    {
+     "file": "airbnb-nashville.csv",
+     "url": "https://github.com/jayjex/dataset-mcp/releases/download/data-v1/airbnb-nashville.csv",
+     "sha256": "72d322f9a39a80611c9bf2222826945371590466c5962b9b958db77ab858feab",
+     "bytes": 1385490,
+     "type": "data",
+     "rows": 10242,
+     "columns": [
+      "id",
+      "name",
+      "neighbourhood",
+      "latitude",
+      "longitude",
+      "room_type",
+      "price",
+      "minimum_nights",
+      "availability_365",
+      "number_of_reviews",
+      "reviews_per_month",
+      "last_review"
+     ]
+    },
+    {
+     "file": "airbnb-denver.csv",
+     "url": "https://github.com/jayjex/dataset-mcp/releases/download/data-v1/airbnb-denver.csv",
+     "sha256": "0c4fdc4e8badb6aca8bf7761c28c165efcd842dd751d71c139a85fc75ecf7d18",
+     "bytes": 653044,
+     "type": "data",
+     "rows": 4939,
+     "columns": [
+      "id",
+      "name",
+      "neighbourhood",
+      "latitude",
+      "longitude",
+      "room_type",
+      "price",
+      "minimum_nights",
+      "availability_365",
+      "number_of_reviews",
+      "reviews_per_month",
+      "last_review"
+     ]
+    },
+    {
+     "file": "airbnb-new-york-city.csv",
+     "url": "https://github.com/jayjex/dataset-mcp/releases/download/data-v1/airbnb-new-york-city.csv",
+     "sha256": "1fddef6335eb193e882ea777307417bb47179b0c3bb14b52e0dc3dab4da4c65d",
+     "bytes": 3763221,
+     "type": "data",
+     "rows": 30234,
+     "columns": [
+      "id",
+      "name",
+      "neighbourhood",
+      "latitude",
+      "longitude",
+      "room_type",
+      "price",
+      "minimum_nights",
+      "availability_365",
+      "number_of_reviews",
+      "reviews_per_month",
+      "last_review"
+     ]
+    },
+    {
+     "file": "airbnb-clark-county-nv.csv",
+     "url": "https://github.com/jayjex/dataset-mcp/releases/download/data-v1/airbnb-clark-county-nv.csv",
+     "sha256": "060701cb4f52056ff4b496272dd903461697476ce5cc9996bc845dbaa6aed771",
+     "bytes": 2797499,
+     "type": "data",
+     "rows": 20234,
+     "columns": [
+      "id",
+      "name",
+      "neighbourhood",
+      "latitude",
+      "longitude",
+      "room_type",
+      "price",
+      "minimum_nights",
+      "availability_365",
+      "number_of_reviews",
+      "reviews_per_month",
+      "last_review"
+     ]
+    },
+    {
+     "file": "airbnb-san-diego.csv",
+     "url": "https://github.com/jayjex/dataset-mcp/releases/download/data-v1/airbnb-san-diego.csv",
+     "sha256": "8987fd734f06ea0983e4d607fd18c320106f2f09b22fe250dd3735fedd196dd1",
+     "bytes": 1767865,
+     "type": "data",
+     "rows": 13225,
+     "columns": [
+      "id",
+      "name",
+      "neighbourhood",
+      "latitude",
+      "longitude",
+      "room_type",
+      "price",
+      "minimum_nights",
+      "availability_365",
+      "number_of_reviews",
+      "reviews_per_month",
+      "last_review"
+     ]
+    },
+    {
+     "file": "airbnb-data-dictionary.md",
+     "url": "https://github.com/jayjex/dataset-mcp/releases/download/data-v1/airbnb-data-dictionary.md",
+     "sha256": "f840fe84a10b4d9115a3d14241b90dd0734a1e37623ea5aba9970cdf36ed5068",
+     "bytes": 2630,
+     "type": "data",
+     "note": "data dictionary"
+    },
+    {
+     "file": "airbnb-ATTRIBUTION.txt",
+     "url": "https://github.com/jayjex/dataset-mcp/releases/download/data-v1/airbnb-ATTRIBUTION.txt",
+     "sha256": "2a7a9a39002cd4b58189e7608a294384259627652c24f0a3bd134a216623271f",
+     "bytes": 1508,
+     "type": "data"
+    }
+   ]
+  },
+  "earn-bounties": {
+   "name": "Superteam Earn Live Listings",
+   "attribution": "Aggregated from the public Superteam Earn API (superteam.fun), harvested 2026-09-04. Public API data; no scraping of private accounts.",
+   "license": "Public API aggregate. Personal and commercial use; do not resell the files as-is.",
+   "query_tips": "earn-listings-cards.json: 51 card records (17 unique listings x 3 API pages), fields include title, rewardAmount, token, deadline, type, status, agentAccess, sponsor. earn-listings-full-descriptions.json: 28 listings with full description text (slug, title, reward, token, deadline, desc). earn-api-endpoints.txt maps 186+ API routes.",
+   "default_file": "earn-listings-cards.json",
+   "files": [
+    {
+     "file": "earn-listings-cards.json",
+     "url": "https://github.com/jayjex/dataset-mcp/releases/download/data-v1/earn-listings-cards.json",
+     "sha256": "5a3c6950362438cbdcca27e60ec89b3b885374b806209df2a731563856bb6ac2",
+     "bytes": 34339,
+     "type": "data",
+     "rows": 51,
+     "columns": [
+      "id",
+      "rewardAmount",
+      "deadline",
+      "type",
+      "title",
+      "token",
+      "winnersAnnouncedAt",
+      "slug",
+      "isWinnersAnnounced",
+      "isFeatured",
+      "compensationType",
+      "minRewardAsk",
+      "maxRewardAsk",
+      "agentAccess",
+      "status",
+      "isPro",
+      "_count",
+      "sponsor"
+     ]
+    },
+    {
+     "file": "earn-listings-full-descriptions.json",
+     "url": "https://github.com/jayjex/dataset-mcp/releases/download/data-v1/earn-listings-full-descriptions.json",
+     "sha256": "11d0b6806ffcdd4d0f6e72c3839059d479e0ecc28e70ca0ca6f318732f200702",
+     "bytes": 101959,
+     "type": "data",
+     "rows": 28,
+     "columns": [
+      "slug",
+      "title",
+      "reward",
+      "token",
+      "deadline",
+      "desc"
+     ]
+    },
+    {
+     "file": "earn-api-endpoints.txt",
+     "url": "https://github.com/jayjex/dataset-mcp/releases/download/data-v1/earn-api-endpoints.txt",
+     "sha256": "ca7e09d5706b6b4cd1786673e9aa5e7c0426d47503e2baf5fb7ee215b17989ff",
+     "bytes": 5715,
+     "type": "data"
+    },
+    {
+     "file": "earn-README.md",
+     "url": "https://github.com/jayjex/dataset-mcp/releases/download/data-v1/earn-README.md",
+     "sha256": "fc57dd65061142709ebad9c66a2b13ef0b4fe9757dd3ff2b8818ba51f5dca909",
+     "bytes": 791,
+     "type": "data"
+    }
+   ]
+  }
+ }
+}
