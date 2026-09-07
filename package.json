@@ -1,0 +1,25 @@
+{
+  "name": "@jayjex/dataset-mcp",
+  "version": "1.0.0",
+  "description": "MCP server over the jayjex Data Vault catalog: free dataset samples (HUD rents, NFL lines, Airbnb, bounties), fetched on demand.",
+  "license": "MIT",
+  "type": "module",
+  "bin": { "dataset-mcp": "index.js" },
+  "files": ["index.js", "README.md"],
+  "engines": { "node": ">=18" },
+  "keywords": [
+    "mcp",
+    "modelcontextprotocol",
+    "dataset",
+    "data-catalog",
+    "hud",
+    "fmr",
+    "nfl",
+    "airbnb",
+    "sample-data"
+  ],
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.30.0",
+    "zod": "^3.23.8"
+  }
+}
