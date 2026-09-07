@@ -1,14 +1,14 @@
 #!/usr/bin/env node
 /**
- * dataset-mcp — MCP server over the jayjex Data Vault catalog.
+ * dataset-mcp: MCP server over the jayjex Data Vault catalog.
  *
  * Catalog: https://jayjex.github.io/data-vault/catalog.json
- * Samples are fetched on demand from jayjex.github.io — the server ships no data.
+ * Samples are fetched on demand from jayjex.github.io: the server ships no data.
  *
  * Tools:
- *  - list_datasets()                — every dataset in the catalog
- *  - get_dataset_info(slug)         — full catalog entry for one dataset
- *  - get_sample(slug, format)       — free sample rows ("json" default, or "csv")
+ *  - list_datasets()               : every dataset in the catalog
+ *  - get_dataset_info(slug)        : full catalog entry for one dataset
+ *  - get_sample(slug, format)      : free sample rows ("json" default, or "csv")
  */
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";

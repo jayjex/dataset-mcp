@@ -16,9 +16,9 @@ Samples are small (about 22 rows each) and free, no signup. The server ships no 
 
 ## Tools
 
-- `list_datasets()` — every dataset in the catalog: slug, name, niche, row counts, sample URLs, full-pack availability.
-- `get_dataset_info(slug)` — the full catalog entry for one dataset: columns, stats, extra files, license, full-pack price.
-- `get_sample(slug, format)` — free sample rows. `format` is `"json"` (default, structured records) or `"csv"` (raw sample text).
+- `list_datasets()`: every dataset in the catalog: slug, name, niche, row counts, sample URLs, full-pack availability.
+- `get_dataset_info(slug)`: the full catalog entry for one dataset: columns, stats, extra files, license, full-pack price.
+- `get_sample(slug, format)`: free sample rows. `format` is `"json"` (default, structured records) or `"csv"` (raw sample text).
 
 ## Config
 
@@ -73,8 +73,8 @@ No API key, no auth, no tracking. If the tools return network errors, check that
 
 Environment overrides, if you want to point it at a mirror:
 
-- `DATA_VAULT_CATALOG_URL` — catalog URL (default above).
-- `DATA_VAULT_SAMPLE_BASE` — sample base URL (default `https://jayjex.github.io/data-vault/data`).
+- `DATA_VAULT_CATALOG_URL`: catalog URL (default above).
+- `DATA_VAULT_SAMPLE_BASE`: sample base URL (default `https://jayjex.github.io/data-vault/data`).
 
 ## Sample responses
 
