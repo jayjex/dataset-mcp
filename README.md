@@ -4,6 +4,8 @@ MCP server over the [jayjex Data Vault](https://jayjex.github.io/data-vault/). S
 
 Full data lives in a public GitHub release ([data-v1](https://github.com/jayjex/dataset-mcp/releases/tag/data-v1), 24 MB across 26 files). The server downloads a file once into `~/.cache/dataset-mcp/`, pins the cache to the manifest SHA-256, and then answers queries from memory.
 
+Run it with `npx -y @jayjex/dataset-mcp` (npm) or `npx -y github:jayjex/dataset-mcp` (repo). See Config below.
+
 ## Datasets
 
 Browse the full catalog at [jayjex.github.io/data-vault](https://jayjex.github.io/data-vault/): 51,895 HUD rent rows, 7,548 NFL games, 90,169 Airbnb listings. Samples are free, and this server queries the full files at no cost.
@@ -97,6 +99,29 @@ query_dataset("earn-bounties", {
 
 ## Config
 
+From npm (works everywhere, no git access needed):
+
+```json
+{
+  "mcpServers": {
+    "dataset-mcp": {
+      "command": "npx",
+      "args": ["-y", "@jayjex/dataset-mcp"]
+    }
+  }
+}
+```
+
+pi, Codex, or other TOML-based agents:
+
+```toml
+[mcp_servers.dataset-mcp]
+command = "npx"
+args = ["-y", "@jayjex/dataset-mcp"]
+```
+
+From GitHub (same server, pulls the repo instead of the npm tarball):
+
 Claude Desktop (`claude_desktop_config.json`):
 
 ```json
@@ -108,14 +133,6 @@ Claude Desktop (`claude_desktop_config.json`):
     }
   }
 }
-```
-
-pi, Codex, or other TOML-based agents:
-
-```toml
-[mcp_servers.dataset-mcp]
-command = "npx"
-args = ["-y", "github:jayjex/dataset-mcp"]
 ```
 
 npm 12 refuses git-based installs by default (`EALLOWGIT`). Pass the flag through npx:
@@ -132,8 +149,6 @@ npm 12 refuses git-based installs by default (`EALLOWGIT`). Pass the flag throug
 ```
 
 or set `allow-git=github.com` once in your `~/.npmrc`. npm 10 and 11 need no flag.
-
-Once the npm package is published, `npx -y @jayjex/dataset-mcp` does the same thing as the git form, with no allow-git flag needed.
 
 ## How it works
 
