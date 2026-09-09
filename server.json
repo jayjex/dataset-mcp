@@ -1,10 +1,10 @@
 {
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "io.github.jayjex/dataset-mcp",
-  "description": "Query NFL, HUD FMR (FY2026/FY2027 + metro), Airbnb, bounty datasets over MCP: filter, stats.",
+  "description": "Query NFL, HUD FMR (ZIP/county/metro), Airbnb, bounty datasets over MCP: filter, stats.",
   "repository": {
     "url": "https://github.com/jayjex/dataset-mcp",
     "source": "github"
   },
-  "version": "1.1.2"
+  "version": "1.1.3"
 }

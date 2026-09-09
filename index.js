@@ -27,7 +27,7 @@ import { join } from "node:path";
 import { Readable } from "node:stream";
 import { pipeline } from "node:stream/promises";
 
-const VERSION = "1.1.2";
+const VERSION = "1.1.3";
 const CATALOG_URL =
   process.env.DATA_VAULT_CATALOG_URL ||
   "https://jayjex.github.io/data-vault/catalog.json";
@@ -442,7 +442,7 @@ const server = new McpServer(
     instructions:
       "Public dataset catalog with full query access. list_datasets shows every dataset; query_dataset filters and paginates the FULL released files (100 rows per call, use offset to page through); get_stats summarizes a column (uniques, numeric min/max/mean, top-N); get_sample fetches a small preview. " +
       "query_dataset and get_stats download the file once from the public GitHub release into a local cache keyed by sha256, so repeat calls are instant. " +
-      "Examples: query_dataset(\"hud-fmr-2026\", { where: [{column: \"state\", op: \"=\", value: \"TX\"}], limit: 5 }); query_dataset(\"hud-fmr-2027\", { where: [{column: \"state\", op: \"=\", value: \"CA\"}], limit: 5 }); query_dataset(\"hud-fmr-metro-2027\", { file: \"most-expensive-2br.csv\", limit: 10 }); query_dataset(\"nfl-games\", { where: [{column: \"season\", op: \"=\", value: 2025}], limit: 10 }); get_stats(\"airbnb-six-cities\", { file: \"airbnb-new-york-city.csv\", column: \"price\" }).",
+      "Examples: query_dataset(\"hud-fmr-2026\", { where: [{column: \"state\", op: \"=\", value: \"TX\"}], limit: 5 }); query_dataset(\"hud-fmr-2027\", { where: [{column: \"state\", op: \"=\", value: \"CA\"}], limit: 5 }); query_dataset(\"hud-fmr-by-zip-2027\", { where: [{column: \"state\", op: \"=\", value: \"TX\"}], limit: 5 }); query_dataset(\"hud-fmr-by-zip-2027\", { where: [{column: \"zip\", op: \"=\", value: \"95060\"}] }); query_dataset(\"hud-fmr-metro-2027\", { file: \"most-expensive-2br.csv\", limit: 10 }); query_dataset(\"nfl-games\", { where: [{column: \"season\", op: \"=\", value: 2025}], limit: 10 }); get_stats(\"airbnb-six-cities\", { file: \"airbnb-new-york-city.csv\", column: \"price\" }).",
   }
 );
 

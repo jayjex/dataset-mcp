@@ -2,7 +2,7 @@
 
 MCP server over the [jayjex Data Vault](https://jayjex.github.io/data-vault/). Sample data is free, and since v1.1.0 the full released files are queryable too: filter, paginate, and summarize every row without downloading anything yourself.
 
-Full data lives in a public GitHub release ([data-v1](https://github.com/jayjex/dataset-mcp/releases/tag/data-v1), 24 MB across 29 files). The server downloads a file once into `~/.cache/dataset-mcp/`, pins the cache to the manifest SHA-256, and then answers queries from memory.
+Full data lives in a public GitHub release ([data-v1](https://github.com/jayjex/dataset-mcp/releases/tag/data-v1), 28 MB across 32 files). The server downloads a file once into `~/.cache/dataset-mcp/`, pins the cache to the manifest SHA-256, and then answers queries from memory.
 
 Run it with `npx -y @jayjex/dataset-mcp` (npm) or `npx -y github:jayjex/dataset-mcp` (repo). See Config below.
 
@@ -16,6 +16,7 @@ Browse the full catalog at [jayjex.github.io/data-vault](https://jayjex.github.i
 | `hud-fmr-2026` | HUD Fair Market Rents FY2026, rent by ZIP, county, and state | 51,895 + 2 tables | Public domain (US government data) |
 | `hud-fmr-2027` | HUD Fair Market Rents FY2027, effective October 1, 2026, same three tables | 51,871 + 2 tables | Public domain (US government data) |
 | `hud-fmr-metro-2027` | HUD Fair Market Rents FY2027 for the top-50 metro areas by ZIP coverage, plus the 50 priciest 2BR metros | 2 × 50 | Public domain (US government data) |
+| `hud-fmr-by-zip-2027` | HUD Fair Market Rents FY2027 by ZIP code, one row per ZIP-HUD-area pair (10,093 ZIPs span more than one area) | 51,871 | Public domain (US government data) |
 | `airbnb-six-cities` | Airbnb listings in Austin, Nashville, Denver, NYC, Las Vegas, San Diego | 90,169 across 6 files | CC BY 4.0 (Inside Airbnb) |
 | `earn-bounties` | Superteam Earn listings: cards, full descriptions, 186+ API routes | 51 cards / 28 descriptions | Public API aggregate |
 | `scraper-pack` | Playwright scraping scripts (samples only) | n/a | See data-vault page |
@@ -89,6 +90,38 @@ Returns `total_matched: 50` with rows like:
   "fmr_2br_median": "4250"
 }
 ```
+
+Every row for ZIP 95060 from the FY2027 ZIP-level table (`hud-fmr-by-zip-2027`, 51,871 rows — the full source table behind both metro files):
+
+```
+query_dataset("hud-fmr-by-zip-2027", {
+  where: [{ column: "zip", op: "=", value: "95060" }]
+})
+```
+
+Returns `total_matched: 1` with rows like:
+
+```json
+{
+  "zip": "95060",
+  "hud_area_code": "METRO42100M42100",
+  "metro": "metro",
+  "area_name": "Santa Cruz-Watsonville, CA MSA",
+  "state": "CA",
+  "fmr_2br": "5260"
+}
+```
+
+Texas rents by ZIP, all bedroom counts:
+
+```
+query_dataset("hud-fmr-by-zip-2027", {
+  where: [{ column: "state", op: "=", value: "TX" }],
+  limit: 5
+})
+```
+
+Returns `total_matched: 3244`.
 
 Every 2025 NFL game (285 matched):
 
