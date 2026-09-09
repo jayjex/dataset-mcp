@@ -536,6 +536,61 @@
      "type": "data"
     }
    ]
+  },
+  "hud-fmr-metro-2027": {
+   "name": "HUD Fair Market Rents FY2027, Top-50 Metro Areas",
+   "attribution": "US Department of Housing and Urban Development (HUD) FY2027 Fair Market Rents, top-50 metro aggregation recomputed from the ZIP-level FY2027 file. US government work, public domain.",
+   "license": "Public domain (US government data)",
+   "query_tips": "Main table fmr-metro-2027.csv: 50 metro areas by ZIP coverage (10,143 of 27,288 metro ZIPs). Filter with where [{\"column\":\"state\",\"op\":\"=\",\"value\":\"DC\"}]. Numeric: zip_count, fmr_0br_median through fmr_4br_median (dollars/month). most-expensive-2br.csv ranks the 50 priciest 2BR metros across all 649 areas (Santa Cruz-Watsonville 4,250); only 12 areas overlap.",
+   "default_file": "fmr-metro-2027.csv",
+   "files": [
+    {
+     "file": "fmr-metro-2027.csv",
+     "url": "https://github.com/jayjex/dataset-mcp/releases/download/data-v1/fmr-metro-2027.csv",
+     "sha256": "1b4625100530a408fe1221613169fe77d2616573d32b3020cb580c2dbf502f0f",
+     "bytes": 4770,
+     "type": "data",
+     "rows": 50,
+     "columns": [
+      "metro_code",
+      "metro_name",
+      "state",
+      "zip_count",
+      "fmr_0br_median",
+      "fmr_1br_median",
+      "fmr_2br_median",
+      "fmr_3br_median",
+      "fmr_4br_median"
+     ]
+    },
+    {
+     "file": "most-expensive-2br.csv",
+     "url": "https://github.com/jayjex/dataset-mcp/releases/download/data-v1/most-expensive-2br.csv",
+     "sha256": "a0341becb6315adf2a8eb70b130035008c2f24d08fbd8cd597d0e98256d6f00e",
+     "bytes": 4601,
+     "type": "data",
+     "rows": 50,
+     "columns": [
+      "metro_code",
+      "metro_name",
+      "state",
+      "zip_count",
+      "fmr_0br_median",
+      "fmr_1br_median",
+      "fmr_2br_median",
+      "fmr_3br_median",
+      "fmr_4br_median"
+     ]
+    },
+    {
+     "file": "hud-metro-schema-2027.md",
+     "url": "https://github.com/jayjex/dataset-mcp/releases/download/data-v1/hud-metro-schema-2027.md",
+     "sha256": "f81d817a686e2be204c991045ad54680c7dd9a9ca42305a84c5960e5305d9ee6",
+     "bytes": 2336,
+     "type": "data",
+     "note": "data dictionary"
+    }
+   ]
   }
  }
 }

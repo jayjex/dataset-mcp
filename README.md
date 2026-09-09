@@ -2,7 +2,7 @@
 
 MCP server over the [jayjex Data Vault](https://jayjex.github.io/data-vault/). Sample data is free, and since v1.1.0 the full released files are queryable too: filter, paginate, and summarize every row without downloading anything yourself.
 
-Full data lives in a public GitHub release ([data-v1](https://github.com/jayjex/dataset-mcp/releases/tag/data-v1), 24 MB across 26 files). The server downloads a file once into `~/.cache/dataset-mcp/`, pins the cache to the manifest SHA-256, and then answers queries from memory.
+Full data lives in a public GitHub release ([data-v1](https://github.com/jayjex/dataset-mcp/releases/tag/data-v1), 24 MB across 29 files). The server downloads a file once into `~/.cache/dataset-mcp/`, pins the cache to the manifest SHA-256, and then answers queries from memory.
 
 Run it with `npx -y @jayjex/dataset-mcp` (npm) or `npx -y github:jayjex/dataset-mcp` (repo). See Config below.
 
@@ -15,6 +15,7 @@ Browse the full catalog at [jayjex.github.io/data-vault](https://jayjex.github.i
 | `nfl-games` | NFL games with scores, closing spreads, totals, moneylines, 1999-2026 | 7,548 + 2 derived tables | CC BY 4.0 (nflverse) |
 | `hud-fmr-2026` | HUD Fair Market Rents FY2026, rent by ZIP, county, and state | 51,895 + 2 tables | Public domain (US government data) |
 | `hud-fmr-2027` | HUD Fair Market Rents FY2027, effective October 1, 2026, same three tables | 51,871 + 2 tables | Public domain (US government data) |
+| `hud-fmr-metro-2027` | HUD Fair Market Rents FY2027 for the top-50 metro areas by ZIP coverage, plus the 50 priciest 2BR metros | 2 × 50 | Public domain (US government data) |
 | `airbnb-six-cities` | Airbnb listings in Austin, Nashville, Denver, NYC, Las Vegas, San Diego | 90,169 across 6 files | CC BY 4.0 (Inside Airbnb) |
 | `earn-bounties` | Superteam Earn listings: cards, full descriptions, 186+ API routes | 51 cards / 28 descriptions | Public API aggregate |
 | `scraper-pack` | Playwright scraping scripts (samples only) | n/a | See data-vault page |
@@ -66,6 +67,26 @@ Returns `total_matched: 3247` with rows like:
   "area_name": "Abilene, TX MSA",
   "state": "TX",
   "fmr_2br": "1090"
+}
+```
+
+The 10 priciest 2BR metro areas across all 649 FY2027 areas (`hud-fmr-metro-2027`):
+
+```
+query_dataset("hud-fmr-metro-2027", {
+  file: "most-expensive-2br.csv",
+  limit: 10
+})
+```
+
+Returns `total_matched: 50` with rows like:
+
+```json
+{
+  "metro_code": "METRO42100M42100",
+  "metro_name": "Santa Cruz-Watsonville, CA MSA",
+  "state": "CA",
+  "fmr_2br_median": "4250"
 }
 ```
 
